@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Download Python Minecraft — All Files</title>
+<style>
+  :root{
+    --bg:#0b0b0b; --card:#121212; --accent:#57b8ff; --muted:#bfc7cf;
+  }
+  html,body{height:100%;margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:linear-gradient(180deg,#061018 0%,var(--bg) 100%);color:var(--muted)}
+  .wrap{max-width:820px;margin:48px auto;padding:28px;background:var(--card);border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.6)}
+  h1{margin:0 0 8px;color:var(--accent);font-size:20px}
+  p{margin:0 0 18px;color:#9aa6b3}
+  .btn{
+    display:inline-block;padding:14px 18px;border-radius:10px;text-decoration:none;font-weight:600;
+    background:linear-gradient(180deg,var(--accent),#2ea6e6);color:#021825;
+    box-shadow:0 6px 18px rgba(25,150,220,.12);
+  }
+  .small{font-size:13px;color:#8d9aa6;margin-top:12px}
+  .fileinfo{margin-top:16px;padding:12px;border-radius:8px;background:#08141a;color:#9fb3bf}
+  .hint{margin-top:12px;color:#9aa6b3;font-size:13px}
+  .fallback{margin-top:14px}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Download — Python Minecraft (All files)</h1>
+    <p>Click the button below to download the entire <code>Python</code> folder as a ZIP file.</p>
+
+    <!-- Adjust filename if you named the ZIP differently -->
+    <a id="dl" class="btn" href="python_files.zip" download>Download python_files.zip</a>
+
+    <div class="fileinfo" id="info">File: <strong>python_files.zip</strong></div>
+
+    <div class="hint">
+      If the browser opens the ZIP instead of saving, right-click the link and choose "Save link as…" or use your browser's download dialog.
+    </div>
+
+    <div class="fallback">
+      <p class="small">No ZIP file found? Create it with this terminal command (case-sensitive):</p>
+      <pre class="small">cd /home/arun/Minecraft/Launch
+zip -r python_files.zip Python
+mv python_files.zip /home/arun/Minecraft/download_python_minecraft/</pre>
+    </div>
+  </div>
+
+  <script>
+    // Show if python_files.zip exists (works when opened via HTTP or file:// in supporting browsers).
+    (function(){
+      const info = document.getElementById('info');
+      fetch('python_files.zip', {method:'HEAD'}).then(r=>{
+        if(!r.ok) info.textContent = 'python_files.zip not found in this folder.';
+      }).catch(()=> {
+        // fetch HEAD may fail under file:// — still keep the fallback info visible
+      });
+    })();
+  </script>
+</body>
+</html>
