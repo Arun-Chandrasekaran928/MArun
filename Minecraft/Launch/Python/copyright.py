@@ -11,6 +11,7 @@ def copyright():
   canvas.pack()
 
   # --- Load and resize background image ---
+  # --- or C:/Users/ ---
   img = Image.open("/home/arun/Minecraft/Launch/Python/images.jpeg")
   img = img.resize((canvas_width, canvas_height), Image.LANCZOS)
   bg_image = ImageTk.PhotoImage(img)
