@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Minecraft Launcher</title>
+    <style>
+        body {
+            background: #202020;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .menu {
+            text-align: center;
+        }
+
+        .menu button {
+            width: 200px;
+            padding: 15px;
+            margin: 10px;
+            font-size: 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        #pythonBtn {
+            background-color: #0078ff;
+            color: white;
+        }
+
+        #htmlBtn {
+            background-color: #00c853;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="menu">
+    <button id="pythonBtn" onclick="
+      fetch('http://localhost:5000/run')
+        .then(response => {
+          if (response.ok) {
+            console.log('Python script started');
+          } else {
+            console.error('Error starting Python script');
+          }
+        });
+    ">PYTHON</button>
+
+    <button id="htmlBtn" onclick="window.location.href='html-launch.html'">HTML</button>
+</div>
+
+</body>
+</html>
